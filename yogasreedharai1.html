@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Appointment Booking System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Add your additional styles here for the buttons */
+        /* For example: */
+        .button {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Appointment Booking System</h2>
+
+    <!-- Buttons with added styling -->
+    <button class="button" onclick="showAppointmentForm(1)">Book an Appointment</button>
+    <button class="button" onclick="showAppointmentForm(2)">Reschedule an Appointment</button>
+    <button class="button" onclick="showAppointmentForm(4)">Show All Appointments</button>
+    <button class="button" onclick="showAppointmentForm(5)">Exit</button>
+
+    <div id="appointmentForm" style="display: none;">
+        <h3 id="formTitle"></h3>
+        <form onsubmit="return submitForm()">
+            <label for="purpose">Purpose:</label>
+            <input type="text" id="purpose" required><br>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required><br>
+
+            <label for="startTime">Start Time:</label>
+            <input type="time" id="startTime" required><br>
+
+            <label for="endTime">End Time:</label>
+            <input type="time" id="endTime" required><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <table id="appointmentTable" style="display: none;">
+        <tr>
+            <th>Date</th>
+            <th>Purpose</th>
+            <th>Time Slot</th>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
